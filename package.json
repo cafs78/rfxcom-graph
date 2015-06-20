@@ -13,6 +13,7 @@
   "author": "Carlos Alarcon",
   "license": "ISC",
   "dependencies": {
-    "rfxcom": "^0.7.9"
+    "rfxcom": "^0.7.9",
+    "sqlite3": "~3.0.8"
   }
 }
