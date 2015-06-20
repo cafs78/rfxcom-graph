@@ -1,0 +1,55 @@
+{
+    "RfxCom": {
+        "path": "/dev/tty.usbserial-06VUS7T4",
+        "options": {
+            "debug": "false"
+        }
+    },
+    "devices": [
+        {
+            "name": "salon",
+            "proto": "th2",
+            "id": "0xEC02"
+        },
+        {
+            "name": "dormitorio",
+            "proto": "th1",
+            "id": "0xFB01"
+        },
+        {
+            "name": "afuera",
+            "proto": "th1",
+            "id": "0x2E02"
+        },
+        {
+            "name": "patio",
+            "proto": "th1",
+            "id": "0x7204"
+        },
+        {
+            "name": "pasillo",
+            "proto": "lighting2",
+            "id": "0x005CF3B2",
+            "unit": 10
+        },
+        {
+            "name": "lampara",
+            "proto": "lighting2",
+            "id": "0x007804CA",
+            "unit": 3,
+            "debug": true
+        },
+        {
+            "name": "despacho",
+            "id": "0x0078A7AA",
+            "proto": "lighting2",
+            "unit": 1
+        }
+    ],
+    "ignored": [
+        {
+            "proto": "temp2",
+            "id": "0xE201"
+        }
+    ]
+}
