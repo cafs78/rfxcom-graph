@@ -1,0 +1,12 @@
+node_modules/rfxcom/node_modules/serialport/build/
+node_modules/rfxcom/node_modules/serialport/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/.bin/
+node_modules/rfxcom/node_modules/serialport/node_modules/node-pre-gyp/node_modules/rc/node_modules/.bin/
+node_modules/sqlite3/node_modules/node-pre-gyp/node_modules/rc/node_modules/.bin/
+node_modules/sqlite3/node_modules/node-pre-gyp/node_modules/request/node_modules/.bin/
+node_modules/sqlite3/node_modules/node-pre-gyp/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/.bin/
+node_modules/sqlite3/node_modules/node-pre-gyp/node_modules/tar-pack/node_modules/.bin/
+node_modules/ionpad-logger/node_modules/ionpad-winston/node_modules/winston-syslog/node_modules/unix-dgram/build
+node_modules/express/node_modules/send/node_modules/mime/build
+node_modules/jade/node_modules/uglify-js/node_modules/source-map/build/
+node_modules/jade/node_modules/clean-css/node_modules/source-map/build
+node_modules/jade/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/build
