@@ -19,6 +19,7 @@
     "debug": "~2.2.0",
     "express": "~4.13.0",
     "express-validator": "~2.12.1",
-    "body-parser": "~1.13.1"
+    "body-parser": "~1.13.1",
+    "jade": "~1.11.0"
   }
 }
