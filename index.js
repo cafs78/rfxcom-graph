@@ -3,6 +3,7 @@ var util = require('util');
 var rfx = require('./lib/rfxcom-wrapper');
 var sql = require('./lib/sqlite3-wrapper');
 var async = require('async');
+var server = require('./lib/server');
 
 var config;
 
@@ -144,35 +145,17 @@ async.waterfall(
             stage = 'update_all';
             olds = rows;
             update_all(olds, w_cb);
-        }
+        },
     ], function(err) {
         if (err) {
             console.error('There was an error at %s stage: %s', stage, err);
         } else {
             rfx.init(config.RfxCom.path, config.RfxCom.options, config.devices, config.ignored, function() {
                 console.log('rfx initialized');
+                server.start();
             });
         }
     }
 );
-
-
-// var lampara = {
-//     name: 'lampara',
-//     proto: 'lighting2',
-//     id: '0x007804CA',
-//     unit: 3
-// };
-
-// rfx.init(config.RfxCom.path, config.RfxCom.options, config.devices, config.ignored, function() {
-//     console.log('Wrapper initiated and waiting for events');
-//     rfx.command(lampara, 3, function() {
-//         setTimeout(function() {
-//             rfx.command(lampara, 'switchOff', function() {
-//                 console.log('Ale');
-//             });
-//         }, 5000);
-//     });
-// });
 
 
