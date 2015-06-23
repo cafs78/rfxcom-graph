@@ -1,9 +1,18 @@
 var express = require('express');
+var bodyParser = require('body-parser');
+var expressValidator = require('express-validator');
 var path = require('path');
 
 var commands = require('./routes/commands');
 
 var app = express();
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+// parse application/json
+app.use(bodyParser.json());
+app.use(expressValidator());
+app.set('view engine', 'jade');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
