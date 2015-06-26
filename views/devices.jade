@@ -1,0 +1,28 @@
+extends layout
+
+mixin row(items)
+  tr
+    each item, index in items
+      td= item
+
+mixin th(items)
+  tr
+    each item, index in items
+      th= index
+
+mixin table(tableData)
+  table
+    +th(tableData[0])
+    each row, index in tableData
+      +row(row)
+
+block content
+    h1= title
+    p Temperatures sensors
+
+    +table(temp)
+
+    p Switches devices
+
+    +table(switches)
+

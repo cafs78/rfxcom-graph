@@ -150,10 +150,10 @@ async.waterfall(
         if (err) {
             console.error('There was an error at %s stage: %s', stage, err);
         } else {
-            rfx.init(config.RfxCom.path, config.RfxCom.options, config.devices, config.ignored, function() {
+            //rfx.init(config.RfxCom.path, config.RfxCom.options, config.devices, config.ignored, function() {
                 console.log('rfx initialized');
                 server.start();
-            });
+            //});
         }
     }
 );

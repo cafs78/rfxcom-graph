@@ -62,13 +62,13 @@ router.get('/', function(req, res, next) {
                                 break;
                         }
                         if (c === 'level') {
-                            rfx.command(dev, c, level, function() {
+                            //rfx.command(dev, c, level, function() {
                                 send_response(req, res, { msg: name + ' level set to ' + level}, 200);
-                            });
+                            //});
                         } else {
-                            rfx.command(dev, c, function() {
+                            //rfx.command(dev, c, function() {
                                 send_response(req, res, { msg: name + ' switched ' + action}, 200);
-                            });
+                            //});
                         }
                     }
                 }
