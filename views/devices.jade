@@ -11,7 +11,7 @@ mixin th(items)
       th= index
 
 mixin table(tableData)
-  table
+  table(cellspacing=10)
     +th(tableData[0])
     each row, index in tableData
       +row(row)
@@ -19,10 +19,8 @@ mixin table(tableData)
 block content
     h1= title
     p Temperatures sensors
-
     +table(temp)
 
     p Switches devices
-
     +table(switches)
 
