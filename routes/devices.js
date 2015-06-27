@@ -30,26 +30,29 @@ router.get('/', function(req, res, next) {
     async.series(
         [
             function get_temp(cb) {
-                sql.get_fields_by_type(['name', 'ts', 't', 'h'], 'temp', cb);
+                sql.get_fields_by_type(['name', 'ts', 't', 'h', 'prev_ts', 'prev_t', 'prev_h' ], 'temp', cb);
             },
             function get_switches(cb) {
-                sql.get_fields_by_type(['name', 'ts', 'status', 'level'], 'switch', cb);
+                sql.get_fields_by_type(['name', 'ts', 'status', 'level', 'prev_ts', 'prev_status', 'prev_level' ], 'switch', cb);
             }
         ],function(err, results) {
             if (err) {
                 send_response(req, res, { msg: 'Error retrieving devices data'}, 500);
             } else {
                 var j = { title: 'Devices', temp : results[0], switches : results[1] };
+                var d = new Date();
                 j.temp.forEach(function(el) {
-                    var d = new Date();
                     d.setTime(el.ts);
                     el.ts = d.toLocaleString();
+                    d.setTime(el.prev_ts);
+                    el.prev_ts = d.toLocaleString();
                 });
 
                 j.switches.forEach(function(el) {
-                    var d = new Date();
                     d.setTime(el.ts);
                     el.ts = d.toLocaleString();
+                    d.setTime(el.prev_ts);
+                    el.prev_ts = d.toLocaleString();
                 });
 
                 res.render('devices', j);
